@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <title>Bookmark</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <!-- link fontawsome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- link bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- link google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap" rel="stylesheet">
+    <!-- link main css -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main class="py-5 bg-main min-vh-100 position-relative">
+      <div class="container">
+        <h1 class="py-2 mx-auto pacifico text-heading position-relative">
+          Bookmarker
+        </h1>
+        <div
+          class="input-section px-3 py-4 mt-5 border border-2 border-start-0 border-end-0 border-black"
+        >
+          <h2 class="h4 mx-auto righteous">
+            <i class="fa-solid fa-bookmark"></i>
+            Bookmark your favorite sites
+            <i class="fa-solid fa-bookmark"></i>
+          </h2>
+          <div class="pt-4 text-center">
+            <div class="mb-4 text-start">
+              <label for="bookmarkName" class="form-label fw-semibold">
+                <i class="fa-solid fa-book-bookmark fa-fw pe-2"></i>
+                Site Name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Bookmark Name"
+                id="bookmarkName"
+                aria-describedby="Bookmark Name"
+                oninput="validateLink(this)"
+              />
+            </div>
+            <div class="mb-4 text-start">
+              <label for="websiteUrl" class="form-label fw-semibold">
+                <i class="fa-solid fa-link fa-fw pe-2"></i>
+                Site URL</label
+              >
+              <input
+                type="url"
+                class="form-control"
+                placeholder="Website URL"
+                id="websiteUrl"
+                oninput="validateLink(this)"
+              />
+            </div>
+            <button id="addBtn" type="submit" class="btn btn-submit px-5">
+              Submit
+            </button>
+          </div>
+        </div>
+        <table class="table bg-light text-center mt-4">
+          <thead>
+            <tr>
+              <th class="text-capitalize">index</th>
+              <th class="text-capitalize">Website Name</th>
+              <th class="text-capitalize">Visit</th>
+              <th class="text-capitalize">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="linksHolder"></tbody>
+        </table>
+      </div>
+      <div id="errorBox" class="error-modal position-absolute d-none justify-content-center align-items-center">
+        <div class="error-box shadow-lg bg-white p-4 rounded-2">
+          <div class="header mb-4 d-flex justify-content-between align-items-center">
+            <div class="color-holder d-flex gap-2">
+              <span class="rounded-circle"></span>
+              <span class="rounded-circle"></span>
+              <span class="rounded-circle"></span>
+            </div>
+            <button id="btnClose" class="btn border-0"><i class="fa-solid fa-xmark fs-3"></i></button>
+          </div>
+          <p class="bree-serif text-heading mb-2">Site Name or Url is not valid, Please follow the rules below :</p>
+          <ul id="errorDisplay" class="list-unstyled mb-0 p-0">
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
